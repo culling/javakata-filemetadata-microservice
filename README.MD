@@ -33,3 +33,4 @@ Build a micro service that is functionally similar to this: https://file-metadat
 - Save settings - https://developer.atlassian.com/server/framework/atlassian-sdk/sal-code-samples/
 - Save data - https://developer.atlassian.com/server/framework/atlassian-sdk/store-and-retrieve-plugin-data/
 - Original Free Code Camp project - https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/file-metadata-microservice
+- Web resource contexts for bitbucket - https://developer.atlassian.com/server/bitbucket/reference/web-resource-contexts/

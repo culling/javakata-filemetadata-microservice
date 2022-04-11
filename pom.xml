@@ -1,38 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <groupId>com.geneculling.javakata</groupId>
     <artifactId>filemetadata-microservice</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>atlassian-plugin</packaging>
-
     <name>filemetadata-microservice</name>
     <description>This is the com.geneculling.javakata:filemetadata-microservice plugin for Atlassian Bitbucket Server.</description>
-
     <organization>
         <name>Example Company</name>
         <url>http://www.example.com/</url>
     </organization>
-
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
         <amps.version>8.1.2</amps.version>
         <bitbucket.version>5.16.0</bitbucket.version>
         <bitbucket.data.version>${bitbucket.version}</bitbucket.data.version>
-
         <!-- This property ensures consistency between the key in atlassian-plugin.xml and the OSGi bundle's key. -->
         <atlassian.plugin.key>${project.groupId}.${project.artifactId}</atlassian.plugin.key>
-
         <atlassian.spring.scanner.version>2.1.7</atlassian.spring.scanner.version>
         <javax.inject.version>1</javax.inject.version>
         <jsr311.version>1.1.1</jsr311.version>
         <plugin.testrunner.version>2.0.2</plugin.testrunner.version>
     </properties>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -55,7 +49,6 @@
             <artifactId>bitbucket-spi</artifactId>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>com.atlassian.plugin</groupId>
             <artifactId>atlassian-spring-scanner-annotation</artifactId>
@@ -73,7 +66,6 @@
             <artifactId>sal-api</artifactId>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -95,7 +87,6 @@
             <artifactId>commons-lang3</artifactId>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>com.atlassian.plugins</groupId>
             <artifactId>atlassian-plugins-osgi-testrunner</artifactId>
@@ -107,8 +98,13 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.8.5</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -117,6 +113,7 @@
                 <version>${amps.version}</version>
                 <extensions>true</extensions>
                 <configuration>
+                    <enableQuickReload>true</enableQuickReload>
                     <products>
                         <product>
                             <id>bitbucket</id>
@@ -127,19 +124,10 @@
                     </products>
                     <instructions>
                         <Atlassian-Plugin-Key>${atlassian.plugin.key}</Atlassian-Plugin-Key>
-
                         <!-- Add package to export here -->
-                        <Export-Package>
-                            com.geneculling.javakata.api,
-                        </Export-Package>
-
+                        <Export-Package>com.geneculling.javakata.api,</Export-Package>
                         <!-- Add package import here -->
-                        <Import-Package>
-                            org.springframework.osgi.*;resolution:="optional",
-                            org.eclipse.gemini.blueprint.*;resolution:="optional",
-                            *
-                        </Import-Package>
-
+                        <Import-Package>org.springframework.osgi.*;resolution:="optional", org.eclipse.gemini.blueprint.*;resolution:="optional", *</Import-Package>
                         <!-- Ensure plugin is Spring powered -->
                         <Spring-Context>*</Spring-Context>
                     </instructions>

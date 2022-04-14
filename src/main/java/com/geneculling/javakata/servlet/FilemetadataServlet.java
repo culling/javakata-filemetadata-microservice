@@ -26,8 +26,14 @@ public class FilemetadataServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html");
+
         Map<String, Object> map = new HashMap<>();
+        map.put("first", "Hello");
+        map.put("second", "POTATOES!");
+
         renderer.render("templates/hello.vm", map, response.getWriter());
+        response.flushBuffer();
     }
 
 }

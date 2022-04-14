@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
     <plugin-info>
         <description>${project.description}</description>
@@ -7,6 +6,9 @@
         <param name="plugin-icon">images/pluginIcon.png</param>
         <param name="plugin-logo">images/pluginLogo.png</param>
     </plugin-info>
+
+
+
     <!-- add our i18n resource -->
     <resource type="i18n" name="i18n" location="filemetadata-microservice"/>
     <!-- add our web resources -->
@@ -25,7 +27,7 @@
 
     <web-item key="filemetadata-button" section="header.global.secondary">
         <label>File Metadata Form</label>
-        <link linkId="geneculling_javakata_filemetadata">#myanchor</link>
+        <link linkId="geneculling-javakata-filemetadata">/plugins/servlet/hello</link>
     </web-item>
 
     <servlet key="filemetadata-servlet" class="com.geneculling.javakata.servlet.FilemetadataServlet">

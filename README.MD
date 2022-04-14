@@ -34,3 +34,4 @@ Build a micro service that is functionally similar to this: https://file-metadat
 - Save data - https://developer.atlassian.com/server/framework/atlassian-sdk/store-and-retrieve-plugin-data/
 - Original Free Code Camp project - https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/file-metadata-microservice
 - Web resource contexts for bitbucket - https://developer.atlassian.com/server/bitbucket/reference/web-resource-contexts/
+- Autowire dependency required for using Velocity Template - https://community.developer.atlassian.com/t/this-is-not-allowed-when-atlassian-plugin-key-is-set/3117/3

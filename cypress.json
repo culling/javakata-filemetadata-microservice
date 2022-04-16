@@ -1,3 +1,4 @@
 {
-    "baseUrl": "http://localhost:7990/bitbucket"
+    "baseUrl": "http://localhost:7990/bitbucket",
+    "chromeWebSecurity": false
 }

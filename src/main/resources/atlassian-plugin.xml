@@ -27,11 +27,11 @@
 
     <web-item key="filemetadata-button" section="header.global.secondary">
         <label>File Metadata Form</label>
-        <link linkId="geneculling-javakata-filemetadata">/plugins/servlet/hello</link>
+        <link linkId="geneculling-javakata-filemetadata">/plugins/servlet/filemetadata</link>
     </web-item>
 
     <servlet key="filemetadata-servlet" class="com.geneculling.javakata.servlet.FilemetadataServlet">
-        <url-pattern>/hello</url-pattern>
+        <url-pattern>/filemetadata</url-pattern>
     </servlet>
 
 </atlassian-plugin>
